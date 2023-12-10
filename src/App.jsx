@@ -11,8 +11,12 @@ function rand(min, max) {
 }
 
 function App() {
-   const [sheep, setSheep] = useState(null);
-   const [cow, setCow] = useState(null);
+   const [sheep, setSheep] = useState(
+      JSON.parse(localStorage.getItem("sheep")) || null
+   );
+   const [cow, setCow] = useState(
+      JSON.parse(localStorage.getItem("cow")) || null
+   );
 
    const makeRandomID = (length) => {
       let newID = [];
@@ -39,7 +43,7 @@ function App() {
    };
 
    return (
-      <div className="container mx-auto my-12 p-12 border md:w-4/6 flex flex-col justify-center items-center">
+      <div className="container mx-auto my-12 p-4  md:w-4/6 flex flex-col justify-center items-center">
          <AddButton
             addSheep={() => {
                addAnimal("sheep");
