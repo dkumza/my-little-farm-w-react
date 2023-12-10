@@ -54,7 +54,7 @@ function App() {
             // color="bg-gradient-to-br from-green-400 to-blue-600" // for edit
             // color="bg-gradient-to-br from-pink-500 to-orange-400" // for delete
          />
-         <Farm sheep={sheep} cow={cow} />
+         <Farm sheep={sheep} setSheep={setSheep} cow={cow} setCow={setCow} />
       </div>
    );
 }
